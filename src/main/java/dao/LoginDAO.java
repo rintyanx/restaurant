@@ -15,7 +15,11 @@ public class LoginDAO{
 	private String driverName = "com.mysql.cj.jdbc.Driver";
 
 	//**	接続先のデータベース*/
-	private String jdbcUrl = "jdbc:mysql://localhost/restaurant?characterEncoding=UTF-8&serverTimezone=JST&allowPublicKeyRetrieval=true&useSSL=false";
+	//ローカル環境用
+	//private String jdbcUrl = "jdbc:mysql://localhost/restaurant?characterEncoding=UTF-8&serverTimezone=JST&allowPublicKeyRetrieval=true&useSSL=false";
+
+	//本番環境用
+	private String jdbcUrl = "jdbc:mysql://b76126908d3ed4:019e5385@us-cdbr-east-02.cleardb.com/heroku_50ea85f5a607dcd?characterEncoding=UTF-8&serverTimezone=JST&allowPublicKeyRetrieval=true&useSSL=false";
 
 	/**	接続するユーザー名*/
 	private String userId = "root";

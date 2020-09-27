@@ -58,6 +58,12 @@ public class SearchServlet extends HttpServlet {
 		//	絞り込み内容を受け取る配列を用意
 		String[] select = null;
 
+		//	検索ワードが空白の場合のエラー
+		if(name.isEmpty() && freeword.isEmpty()) {
+			request.setAttribute("error","検索ワードを入力してください。");
+			doGet(request, response);
+		}
+
 		//	セッションスコープに絞り込み内容がない場合は
 		if(session.getAttribute("select") == null || request.getParameter("flag") != null) {
 			select = request.getParameterValues("select");//絞り込み内容のパラメータを取得

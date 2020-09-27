@@ -1,5 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
+    <%
+    String emptyError = (String)request.getAttribute("emptyError");
+    String registerError = (String)request.getAttribute("registerError");
+    String wrongError = (String)request.getAttribute("wrongError");
+    %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,9 +21,19 @@
 
 <div class = "content">
 <form action = "/ts/RegisterServlet" method = "post">
-使用するIDとパスワードを入力してください<br>
-ID：<input type = "text" name = "id"><br>
-パスワード：<input type = "password" name = "pass"><br>
+使用するIDとパスワードを入力してください<br><br>
+<%if(emptyError != null) {%>
+<%= emptyError %><br>
+<%} %>
+<%if(registerError != null) {%>
+<%= registerError %><br>
+<%} %>
+<%if(wrongError != null) {%>
+<%= wrongError %><br>
+<%} %>
+ID（必須）：<input type = "text" name = "id"><br>
+パスワード（必須）：<input type = "password" name = "pass1"><br>
+パスワード（確認）：<input type = "password" name = "pass2"><br>
 年齢：
 <select name="age">
 <option value="">選択しない</option>

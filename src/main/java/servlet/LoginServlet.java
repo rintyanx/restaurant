@@ -58,6 +58,7 @@ public class LoginServlet extends HttpServlet {
 				dispatcher.forward(request, response);
 
 			}else {	//	ログイン失敗時
+				request.setAttribute("error", "IDかパスワードが違います。");
 				doGet(request,response);
 			}
 

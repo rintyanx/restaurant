@@ -36,17 +36,30 @@ public class RegisterServlet extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		//	登録したいユーザ情報のパラメータを取得
 		String id = request.getParameter("id");
-		String pass = request.getParameter("pass");
+		String pass1 = request.getParameter("pass1");
+		String pass2 = request.getParameter("pass2");
 		String age = request.getParameter("age");
 		String address = request.getParameter("address");
 
-		//	データベースにアクセスし、ユーザを登録する
-		RegisterDAO a = new RegisterDAO();
-		if(a.registerUser(id,pass,age,address)) {	//	登録できた場合は、ログイン画面に移動
-			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/Login.jsp");
-			dispatcher.forward(request, response);
-		}else {	//	登録できなかった場合は。doGetを呼び出し、登録画面に戻す
+		//	ID パスワードが空白の場合のエラーメッセージ
+		if(id.isEmpty() || pass1.isEmpty() || pass2.isEmpty()) {
+			request.setAttribute("emptyError","必須事項を入力してください。");
 			doGet(request,response);
+		}else if(!pass1.equals(pass2)) {
+			request.setAttribute("wrongError","パスワードが一致していません。");
+			doGet(request,response);
+		}else {
+
+			//	データベースにアクセスし、ユーザを登録する
+			RegisterDAO a = new RegisterDAO();
+			if(a.registerUser(id,pass1,age,address)) {	//	登録できた場合は、ログイン画面に移動
+				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/Login.jsp");
+				dispatcher.forward(request, response);
+			}else {	//	登録できなかった場合は。doGetを呼び出し、登録画面に戻す
+				//	ID登録済みのエラーメッセージ
+				request.setAttribute("registerError","そのIDはすでに利用されています。");
+				doGet(request,response);
+			}
 		}
 	}
 

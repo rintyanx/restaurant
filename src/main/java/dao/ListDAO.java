@@ -23,7 +23,7 @@ public class ListDAO {
 	//private String jdbcUrl = "jdbc:mysql://localhost/restaurant?characterEncoding=UTF-8&serverTimezone=JST&useSSL=false";
 
 	//本番環境用
-	private String jdbcUrl = "jdbc:mysql://b76126908d3ed4:019e5385@us-cdbr-east-02.cleardb.com/heroku_50ea85f5a607dcd?characterEncoding=UTF-8&serverTimezone=JST&allowPublicKeyRetrieval=true&useSSL=false";
+	private String jdbcUrl = "jdbc:mysql://b556fc6e1dce68:0db7be8c@us-cdbr-east-02.cleardb.com/heroku_cf7e12ba5ffd86a?characterEncoding=UTF-8&serverTimezone=JST&allowPublicKeyRetrieval=true&useSSL=false";
 
 
 	/**	接続するユーザー名*/
@@ -97,7 +97,7 @@ public class ListDAO {
 
 					//	作成したリストに入れる店舗テーブルを作成
 					buf = new StringBuffer();
-					buf.append("CREATE TABLE "+ user.getId() + listID +"(STORENAME char(30) NOT NULL,STOREURL char(250) NOT NULL PRIMARY KEY);");//SQL文の記述
+					buf.append("CREATE TABLE "+ user.getId() + listID +"(STORENAME char(50) NOT NULL,STOREURL char(250) NOT NULL PRIMARY KEY);");//SQL文の記述
 
 					//SQL発行用オブジェクトに上記のSQL文をセット
 					ps = con.prepareStatement(buf.toString(),ResultSet.TYPE_SCROLL_SENSITIVE,ResultSet.CONCUR_UPDATABLE);

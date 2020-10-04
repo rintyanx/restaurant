@@ -1,0 +1,11 @@
+@charset "UTF-8";
+#main_button button{
+	width: 100px;
+	height: 25px;
+	background-color: #2096F3;
+	color: #fff;
+	padding: 0px;
+	border-radius: 3px;
+	box-shadow: 0 0 8px rgba(0,0,0,.4);
+	cursor: pointer;
+}

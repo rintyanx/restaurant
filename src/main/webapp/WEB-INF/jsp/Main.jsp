@@ -10,6 +10,7 @@
 <html>
 <head>
 <link rel="stylesheet" href = "<%=request.getContextPath() %>/WebContent/css/style.css">
+<link rel="stylesheet" href = "<%=request.getContextPath() %>/WebContent/css/button.css">
 <link rel="stylesheet" href = "<%=request.getContextPath() %>/WebContent/css/hidden_box.css">
 <meta charset="UTF-8">
 <title>レストランルーム</title>
@@ -18,13 +19,16 @@
 <h1>レストランルーム</h1>
 
 
-
+<div class = "content">
 ようこそ、<%= user.getId() %>	<br>
-<a href = "ListServlet">リスト一覧</a>
-<a href = "ReviseUserServlet">ユーザ設定</a>
-<a href = "SearchListServlet">リスト検索</a>
-<a href = "LogoutServlet">ログアウト</a><br>
 
+<div id = "main_button">
+<button onclick="location.href='ListServlet'">リスト一覧</button>
+<button onclick="location.href='ReviseUserServlet'">ユーザ設定</button>
+<button onclick="location.href='SearchListServlet'">リスト検索</button>
+<button onclick="location.href='LogoutServlet'">ログアウト</button><br>
+</div>
+</div>
 <form action="/ts/SearchServlet" method = "post">
 
 <div class = "content">
@@ -33,10 +37,13 @@
 <%= error %><br>
 <%} %>
 </div>
-店舗名検索：<input type = "text" name = "name"><br>
-フリーワード（全角スペース区切り）：<input type = "text" name = "freeword">
+店舗名検索<input type = "text" name = "name"><br>
+フリーワード（全角スペース区切り）<input type = "text" name = "freeword">
+
 AND検索<input type = "radio" name = "select" value = "freeword_condition=1" checked>
+
 OR検索<input type = "radio" name = "select" value = "freeword_condition=2">
+
 <input type="hidden" name="offset_page" value =1>
 <input type="hidden" name="flag" value =1>
 <button type = "submit">検索</button><br>

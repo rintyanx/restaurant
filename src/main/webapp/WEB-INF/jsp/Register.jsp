@@ -31,12 +31,12 @@
 <%if(wrongError != null) {%>
 <%= wrongError %><br>
 <%} %>
-ID（必須）：<input type = "text" name = "id"><br>
-パスワード（必須）：<input type = "password" name = "pass1"><br>
-パスワード（確認）：<input type = "password" name = "pass2"><br>
+ID（半角英数6文字以内）：<input type = "text" name = "id" maxlength = 6 pattern = "^[0-9A-Za-z]+$" required><br>
+パスワード（半角英数4文字以内）：<input type = "password" name = "pass1" maxlength = 4 pattern = "^[0-9A-Za-z]+$" required><br>
+パスワード（確認）：<input type = "password" name = "pass2" maxlength = 4 pattern = "^[0-9A-Za-z]+$" required><br>
 年齢：
 <select name="age">
-<option value="">選択しない</option>
+<option value="0">選択しない</option>
 <option value="10">１０代</option>
 <option value="20">２０代</option>
 <option value="30">３０代</option>
@@ -51,7 +51,7 @@ ID（必須）：<input type = "text" name = "id"><br>
 <br>
 都道府県：
 <select name="address">
-<option value="">選択しない</option>
+<option value="0">選択しない</option>
 <option value="北海道">北海道</option>
 <option value="青森県">青森県</option>
 <option value="岩手県">岩手県</option>

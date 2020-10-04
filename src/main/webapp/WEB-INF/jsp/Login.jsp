@@ -22,8 +22,8 @@
 <%= error %><br>
 <%} %>
 <p>
-ユーザーID：<input type = "text" name = "id"><br>
-パスワード：<input type = "password" name = "pass"><br>
+ユーザーID：<input type = "text" name = "id" maxlength = 6 pattern = "^[0-9A-Za-z]+$" required><br>
+パスワード：<input type = "password" name = "pass" maxlength = 4 pattern = "^[0-9A-Za-z]+$" required><br>
 </p>
 <p><button type="submit">ログイン</button></p>
 </form>

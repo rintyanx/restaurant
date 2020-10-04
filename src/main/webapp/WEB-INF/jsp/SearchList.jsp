@@ -4,14 +4,16 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" href = "<%=request.getContextPath() %>/WebContent/css/style.css">
 <title>リスト検索</title>
 </head>
 <body>
 <h1>リスト検索</h1>
 
+<div class = "content">
 ユーザ名からリストを探す<br>
 <form action = "/ts/SearchIDServlet" method = "post">
-<input type = "text" name = "userID">
+<input type = "text" name = "userID" maxlength = 6 pattern = "^[0-9A-Za-z]+$" required>
 <button type = "submit">検索</button>
 </form>
 <br>
@@ -90,5 +92,6 @@
 </select>
 <button type = "submit">検索</button>
 </form>
+</div>
 </body>
 </html>

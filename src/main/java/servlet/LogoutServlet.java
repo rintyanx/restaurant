@@ -2,7 +2,6 @@ package servlet;
 
 import java.io.IOException;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -26,9 +25,12 @@ public class LogoutServlet extends HttpServlet {
 		//	セッションスコープをすべて削除する
 		 HttpSession session = request.getSession(true);
 		 session.invalidate();
-		//	初期画面にフォワード
-		RequestDispatcher dispatcher = request.getRequestDispatcher("");
-		dispatcher.forward(request, response);
+			/*		//	初期画面にフォワード
+					RequestDispatcher dispatcher = request.getRequestDispatcher("https://lit-citadel-05566.herokuapp.com/");
+					dispatcher.forward(request, response);*/
+
+		 response.sendRedirect("https://lit-citadel-05566.herokuapp.com/");
+
 	}
 
 	/**

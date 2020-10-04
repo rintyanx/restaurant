@@ -209,20 +209,51 @@ $(function(){
 <%} %>
 
 <br>
+<%if(!(Integer.parseInt(offset_page) <= 10)) {%>
+<button  value = <%=Integer.parseInt(offset_page) - 10 %> class = "btn1">←10</button>
+<%} %>
 <%if(gnavi.getTotal_hit_count() % 10 != 0) {%>
-	<% for(int i = 0;i <= gnavi.getTotal_hit_count() / 10 && i < 100;i++) {%>
-		<button  value = <%=i+1 %> class = "btn1"><%=i+1 %></button>
-		<%if((i+1) % 20 == 0) {%>
-				<br>
+	<% for(int i = 1;i <= 10; i++) {%>
+		<%if(Integer.parseInt(offset_page) % 10 != 0 ) {%>
+			<%if(gnavi.getTotal_hit_count() / 100 == Integer.parseInt(offset_page) / 10 ) {%>
+				<%if(i <= 1 + gnavi.getTotal_hit_count() / 10 - (gnavi.getTotal_hit_count() /100 * 10)) {%>
+					<button  value = <%=Integer.parseInt(offset_page) / 10 * 10 + i %> class = "btn1"><%=Integer.parseInt(offset_page) / 10 * 10 + i %></button>
+				<%} %>
+			<%}else{ %>
+				<button  value = <%=Integer.parseInt(offset_page) / 10 * 10 + i %> class = "btn1"><%=Integer.parseInt(offset_page) / 10 * 10 + i %></button>
+			<%} %>
+		<%}else if(Integer.parseInt(offset_page) % 10 == 0){ %>
+			<button  value = <%=(Integer.parseInt(offset_page)- 1) / 10 * 10 + i %> class = "btn1"><%=(Integer.parseInt(offset_page)- 1) / 10 * 10 + i%></button>
 		<%} %>
 	<%} %>
+<%if(100 < gnavi.getTotal_hit_count() && Integer.parseInt(offset_page) <= 90 && (Integer.parseInt(offset_page)) <= gnavi.getTotal_hit_count() / 10 - (gnavi.getTotal_hit_count() / 10 % (gnavi.getTotal_hit_count() /100 * 10)) ) {%>
+<%if(gnavi.getTotal_hit_count() / 10 - Integer.parseInt(offset_page) < 10){ %>
+<button  value = <%= gnavi.getTotal_hit_count() / 10 + 1%> class = "btn1">10→</button>
+<%} else{ %>
+<button  value = <%=Integer.parseInt(offset_page) + 10 %> class = "btn1">10→</button>
+<%} %>
+<%} %>
 <%} else{%>
-	<% for(int i = 0;i < gnavi.getTotal_hit_count() / 10 && i < 100;i++) {%>
-		<button  value = <%=i+1 %> class = "btn1"><%=i+1 %></button>
-		<%if((i+1) % 20 == 0) {%>
-				<br>
+	<% for(int i = 1;i <= 10; i++) {%>
+		<%if(Integer.parseInt(offset_page) % 10 != 0 ) {%>
+			<%if(gnavi.getTotal_hit_count() / 100 == Integer.parseInt(offset_page) / 10 ) {%>
+				<%if(i <= gnavi.getTotal_hit_count() / 10 - (gnavi.getTotal_hit_count() /100 * 10)) {%>
+					<button  value = <%=Integer.parseInt(offset_page) / 10 * 10 + i %> class = "btn1"><%=Integer.parseInt(offset_page) / 10 * 10 + i %></button>
+				<%} %>
+			<%}else{ %>
+				<button  value = <%=Integer.parseInt(offset_page) / 10 * 10 + i %> class = "btn1"><%=Integer.parseInt(offset_page) / 10 * 10 + i %></button>
+			<%} %>
+		<%}else if(Integer.parseInt(offset_page) % 10 == 0){ %>
+			<button  value = <%=(Integer.parseInt(offset_page)- 1) / 10 * 10 + i %> class = "btn1"><%=(Integer.parseInt(offset_page)- 1) / 10 * 10 + i%></button>
 		<%} %>
 	<%} %>
+<%if(100 < gnavi.getTotal_hit_count() && Integer.parseInt(offset_page) <= 90 && (Integer.parseInt(offset_page)) <= gnavi.getTotal_hit_count() / 10 - (gnavi.getTotal_hit_count() / 10 % (gnavi.getTotal_hit_count() /100 * 10)) ) {%>
+<%if(gnavi.getTotal_hit_count() / 10 - Integer.parseInt(offset_page) < 10){ %>
+<button  value = <%= gnavi.getTotal_hit_count() / 10%> class = "btn1">10→</button>
+<%} else{ %>
+<button  value = <%=Integer.parseInt(offset_page) + 10 %> class = "btn1">10→</button>
+<%} %>
+<%} %>
 <%} %>
 
 </body>

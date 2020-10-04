@@ -1,0 +1,42 @@
+@charset "UTF-8";
+.content{
+	background-color: #fff;
+	width: 650px;
+	margin: 10px auto;
+	border: 1px solid #d1d1d1;
+	padding: 30px;
+}
+
+table{
+	margin:auto;
+}
+
+.content button{
+	width: 100px;
+	height: 25px;
+	background-color: #2096F3;
+	color: #fff;
+	padding: 0px;
+	border-radius: 3px;
+	box-shadow: 0 0 8px rgba(0,0,0,.4);
+	cursor: pointer;
+}
+
+.page_num button{
+	width: 40px;
+	height: 40px;
+	background-color: #2096F3;
+	color: #fff;
+	padding: 0px;
+	border-radius: 3px;
+	box-shadow: 0 0 8px rgba(0,0,0,.4);
+	cursor: pointer;
+}
+
+#btn2 a {
+  text-decoration: none;
+}
+#btn2:hover {
+	cursor: pointer ;
+	color: #f00 ;
+}

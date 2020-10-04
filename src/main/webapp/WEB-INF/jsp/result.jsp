@@ -11,6 +11,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" href = "<%=request.getContextPath() %>/WebContent/css/result.css">
 <link rel="stylesheet" href = "<%=request.getContextPath() %>/WebContent/css/modal.css">
 <script src="<%=request.getContextPath() %>/WebContent/js/jquery-3.5.1.js"></script>
 <meta charset="UTF-8">
@@ -159,6 +160,8 @@ $(function(){
     });
 </script> -->
 
+<div class = "content">
+
 <form method="post" name="form1" action="/ts/LoginServlet">
 <a href="javascript:form1.submit()">topへ</a>
 </form>
@@ -192,7 +195,7 @@ $(function(){
 	<!--	モーダルウィンドウのコンテンツ開始 -->
 <p>登録するリストを選んでください。</p>
 
-	新規リスト：<input type = "text" name = "listName" class = "target">
+	新規リスト：<input type = "text" name = "listName" class = "target" maxlength = 20>
 	<button class = "btn2">登録</button><br>
 
 <%for(int j = 0; j < user.getList().size();j++){ %>
@@ -209,6 +212,8 @@ $(function(){
 <%} %>
 
 <br>
+<div class = "page_num">
+
 <%if(!(Integer.parseInt(offset_page) <= 10)) {%>
 <button  value = <%=Integer.parseInt(offset_page) - 10 %> class = "btn1">←10</button>
 <%} %>
@@ -256,5 +261,7 @@ $(function(){
 <%} %>
 <%} %>
 
+</div>
+</div>
 </body>
 </html>

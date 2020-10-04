@@ -132,7 +132,7 @@ $(function(){
 </form>
 
 <form action = "/ts/ListServlet" method = "post">
-	<input type = "text" name = "listName">
+	<input type = "text" name = "listName" maxlength = 20>
 	<button type = "submit">リスト新規作成</button>
 </form>
 <h3>リスト一覧</h3>

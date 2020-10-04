@@ -9,11 +9,17 @@
 <!DOCTYPE html>
 <html>
 <head>
+<script src="${pageContext.request.contextPath}/js/jquery-3.5.1.js"></script>
 <link rel="stylesheet" href = "<%=request.getContextPath() %>/WebContent/css/hidden_button.css">
 <meta charset="UTF-8">
 <title>ユーザ情報</title>
 </head>
 <body>
+
+<form method="post" name="form1" action="/ts/LoginServlet">
+<a href="javascript:form1.submit()">topへ</a>
+</form>
+
 <h2>ユーザ情報</h2>
 
 

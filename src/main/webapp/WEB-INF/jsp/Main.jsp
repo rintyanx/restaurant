@@ -28,9 +28,11 @@
 <form action="/ts/SearchServlet" method = "post">
 
 <div class = "content">
+<div class = "error">
 <%if(error != null) {%>
 <%= error %><br>
 <%} %>
+</div>
 店舗名検索：<input type = "text" name = "name"><br>
 フリーワード（全角スペース区切り）：<input type = "text" name = "freeword">
 AND検索<input type = "radio" name = "select" value = "freeword_condition=1" checked>

@@ -4,10 +4,16 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<script src="${pageContext.request.contextPath}/js/jquery-3.5.1.js"></script>
 <link rel="stylesheet" href = "<%=request.getContextPath() %>/WebContent/css/style.css">
 <title>リスト検索</title>
 </head>
 <body>
+
+<form method="post" name="form1" action="/ts/LoginServlet">
+<a href="javascript:form1.submit()">topへ</a>
+</form>
+
 <h1>リスト検索</h1>
 
 <div class = "content">

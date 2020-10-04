@@ -22,6 +22,7 @@
 <div class = "content">
 <form action = "/ts/RegisterServlet" method = "post">
 使用するIDとパスワードを入力してください<br><br>
+<div class = "error">
 <%if(emptyError != null) {%>
 <%= emptyError %><br>
 <%} %>
@@ -31,6 +32,7 @@
 <%if(wrongError != null) {%>
 <%= wrongError %><br>
 <%} %>
+</div>
 ID（半角英数6文字以内）：<input type = "text" name = "id" maxlength = 6 pattern = "^[0-9A-Za-z]+$" required><br>
 パスワード（半角英数4文字以内）：<input type = "password" name = "pass1" maxlength = 4 pattern = "^[0-9A-Za-z]+$" required><br>
 パスワード（確認）：<input type = "password" name = "pass2" maxlength = 4 pattern = "^[0-9A-Za-z]+$" required><br>

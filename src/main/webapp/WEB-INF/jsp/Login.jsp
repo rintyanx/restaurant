@@ -18,9 +18,11 @@
 <p>ログインするユーザのIDとパスワードを入力してください</p>
 
 <form action="/ts/LoginServlet" method = "post">
+<div class = "error">
 <%if(error != null) {%>
 <%= error %><br>
 <%} %>
+</div>
 <p>
 ユーザーID：<input type = "text" name = "id" maxlength = 6 pattern = "^[0-9A-Za-z]+$" required><br>
 パスワード：<input type = "password" name = "pass" maxlength = 4 pattern = "^[0-9A-Za-z]+$" required><br>

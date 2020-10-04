@@ -15,6 +15,10 @@
 </head>
 <body>
 
+<form method="post" name="form1" action="/ts/LoginServlet">
+<a href="javascript:form1.submit()">topへ</a>
+</form>
+
 <script>
     $(function(){
 

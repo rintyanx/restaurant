@@ -11,6 +11,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<script src="${pageContext.request.contextPath}/js/jquery-3.5.1.js"></script>
 <meta charset="UTF-8">
 <title> リスト詳細</title>
 </head>

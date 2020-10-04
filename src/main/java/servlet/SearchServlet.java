@@ -86,6 +86,8 @@ public class SearchServlet extends HttpServlet {
 			session.setAttribute("freeword", freeword);
 			//	絞り込み内容
 			session.setAttribute("select", select);
+			//	ページ番号
+			session.setAttribute("offset_page", offset_page);
 			//	結果画面にフォワード
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/result.jsp");
 			dispatcher.forward(request, response);

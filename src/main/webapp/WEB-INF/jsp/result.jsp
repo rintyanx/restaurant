@@ -151,7 +151,9 @@ $(function(){
 <h2><%= offset_page %>ページ目</h2>
 <% for(int i = 0; i < gnavi.getNameList().size();i++){ %>
 
-<a href = <%= gnavi.getUrlList().get(i)%> target = ”_blank”><%= gnavi.getNameList().get(i) %></a>
+<a href = <%= gnavi.getUrlList().get(i)%> target = ”_blank”><%= gnavi.getNameList().get(i) %></a><br>
+アクセス：
+<%=gnavi.getLineList().get(i) + gnavi.getStationList().get(i) + "徒歩" + gnavi.getTimeList().get(i) +  "分"%>
 
 		<div id="orver">
 		<div id="wrap">

@@ -117,6 +117,13 @@ public class APICatch {
 	            	 gnavi.getNameList().add(node.get("rest").get(i).get("name").asText());
 	            	 //	店舗URLをセット
 	            	 gnavi.getUrlList().add(node.get("rest").get(i).get("url").asText());
+	            	 //路線名をセット
+	            	 gnavi.getLineList().add(node.get("rest").get(i).get("access").get("line").asText());
+	            	 //駅名をセット
+	            	 gnavi.getStationList().add(node.get("rest").get(i).get("access").get("station").asText());
+	            	 //かかる時間をセット
+	            	 gnavi.getTimeList().add(node.get("rest").get(i).get("access").get("walk").asText());
+
 	             }
 
 	             return gnavi;

@@ -1,4 +1,7 @@
 @charset "UTF-8";
+body{
+	background-color: #CCCCCC
+}
 .content{
 	background-color: #fff;
 	width: 650px;

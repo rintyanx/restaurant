@@ -8,6 +8,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" href = "<%=request.getContextPath() %>/WebContent/css/style.css">
+<link rel="stylesheet" href = "<%=request.getContextPath() %>/WebContent/css/result.css">
 <link rel="stylesheet" href = "<%=request.getContextPath() %>/WebContent/css/hidden_button.css">
 <link rel="stylesheet" href = "<%=request.getContextPath() %>/WebContent/css/modal.css">
 <script src="<%=request.getContextPath() %>/WebContent/js/jquery-3.5.1.js"></script>
@@ -15,7 +17,7 @@
 <title>レストランルーム</title>
 </head>
 <body>
-
+<div class = "content">
 <script>
 $(function(){
 	var listNum ;
@@ -132,8 +134,8 @@ $(function(){
 </form>
 
 <form action = "/ts/ListServlet" method = "post">
-	<input type = "text" name = "listName" maxlength = 20>
-	<button type = "submit">リスト新規作成</button>
+	<input type = "text" name = "listName" maxlength = 20 required>
+	<button type = "submit" class = "a">リスト新規作成</button>
 </form>
 <h3>リスト一覧</h3>
 
@@ -176,6 +178,6 @@ $(function(){
 <%} %>
 
 </div>
-
+</div>
 </body>
 </html>

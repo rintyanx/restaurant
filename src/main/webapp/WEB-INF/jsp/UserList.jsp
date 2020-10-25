@@ -9,12 +9,14 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" href = "<%=request.getContextPath() %>/WebContent/css/style.css">
+<link rel="stylesheet" href = "<%=request.getContextPath() %>/WebContent/css/result.css">
 <script src="<%=request.getContextPath() %>/WebContent/js/jquery-3.5.1.js"></script>
 <meta charset="UTF-8">
 <title>リスト検索結果</title>
 </head>
 <body>
-
+<div class = "content">
 <form method="post" name="form1" action="/ts/LoginServlet">
 <a href="javascript:form1.submit()">topへ</a>
 </form>
@@ -50,5 +52,6 @@
 <%=list.getListName() %>
 <button  value = <%=list.getListID() %> class = "detail">リスト詳細</button><br>
 <%} %>
+</div>
 </body>
 </html>

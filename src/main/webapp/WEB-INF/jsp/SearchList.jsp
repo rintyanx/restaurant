@@ -9,14 +9,14 @@
 <title>リスト検索</title>
 </head>
 <body>
-
+<div class = "content">
 <form method="post" name="form1" action="/ts/LoginServlet">
 <a href="javascript:form1.submit()">topへ</a>
 </form>
 
 <h1>リスト検索</h1>
 
-<div class = "content">
+
 ユーザ名からリストを探す<br>
 <form action = "/ts/SearchIDServlet" method = "post">
 <input type = "text" name = "userID" maxlength = 6 pattern = "^[0-9A-Za-z]+$" required>
